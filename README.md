@@ -7,9 +7,8 @@ The public experience uses NDA-safe sector labels. Real client names, document
 titles, filenames, and writing samples are encrypted before publication and are
 decrypted only in the visitor's browser after they enter the access phrase.
 
-The GitHub Pages build also preserves the repository's existing encrypted
-placeholder vault. Its current access phrase remains compatible while the final
-approved documents are being prepared; the phrase is never copied into source.
+The GitHub Pages and Sites builds publish only the encrypted portfolio bundle.
+The access phrase is never copied into source, committed, or sent to a server.
 
 ## Local development
 

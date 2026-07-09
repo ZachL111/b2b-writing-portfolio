@@ -134,6 +134,27 @@ const PROCESS = [
   },
 ];
 
+const PUBLIC_EXPERIENCE = [
+  {
+    date: "May 2020—Present",
+    title: "ZachThinksMedia",
+    role: "Creator and editorial writing",
+    copy: "An independent home for writing, media, and ongoing editorial projects.",
+  },
+  {
+    date: "2023—2026",
+    title: "ZachTalks",
+    role: "Independent publishing",
+    copy: "A personal writing and publishing brand focused on ideas, commentary, and original perspectives.",
+  },
+  {
+    date: "2017—2022",
+    title: "My Opinions Are LLC.",
+    role: "Writing and content company",
+    copy: "An earlier independent writing venture and the foundation for Zach’s editorial work.",
+  },
+];
+
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, React.ReactNode> = {
     arrow: <path d="m5 12 14 0m-5-5 5 5-5 5" />,
@@ -356,8 +377,6 @@ export default function Home() {
 
   return (
     <main>
-      <div className="ambient ambient-left" />
-      <div className="ambient ambient-right" />
       <div className="page-shell">
         <header className="site-header">
           <a className="brand" href="#top" aria-label="Zach Lewis, home">
@@ -370,7 +389,7 @@ export default function Home() {
 
           <nav className="desktop-nav" aria-label="Primary navigation">
             <a href="#work">Work</a>
-            <a href="#capabilities">Capabilities</a>
+            <a href="#experience">Experience</a>
             <a href="#process">Process</a>
             <a href="#about">About</a>
           </nav>
@@ -400,7 +419,7 @@ export default function Home() {
           {mobileMenuOpen && (
             <nav className="mobile-nav" aria-label="Mobile navigation">
               <a href="#work" onClick={() => setMobileMenuOpen(false)}>Work</a>
-              <a href="#capabilities" onClick={() => setMobileMenuOpen(false)}>Capabilities</a>
+              <a href="#experience" onClick={() => setMobileMenuOpen(false)}>Experience</a>
               <a href="#process" onClick={() => setMobileMenuOpen(false)}>Process</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
               <button onClick={unlocked ? lockPortfolio : openAccess}>
@@ -450,8 +469,6 @@ export default function Home() {
           </div>
 
           <div className="work-stack-wrap" aria-label="Selected client work">
-            <div className="stack-layer stack-layer-back" />
-            <div className="stack-layer stack-layer-middle" />
             <div className="hero-work-panel">
               <div className="panel-heading">
                 <div>
@@ -523,7 +540,7 @@ export default function Home() {
                   <div className="sample-panel">
                     <div className="sample-panel-header">
                       <span>Protected samples</span>
-                      <span>{privateClient?.documents.length ?? client.formats.length}</span>
+                      <span>{privateClient ? `${privateClient.documents.length} files` : "Locked"}</span>
                     </div>
                     {privateClient ? (
                       privateClient.documents.length ? (
@@ -551,16 +568,14 @@ export default function Home() {
                         </div>
                       )
                     ) : (
-                      client.formats.map((format, index) => (
-                        <button className="sample-row" key={format} onClick={openAccess}>
-                          <span className="sample-icon"><Icon name="lock" size={18} /></span>
-                          <span className="sample-copy">
-                            <strong>Protected writing sample {index + 1}</strong>
-                            <small>{format}</small>
-                          </span>
-                          <span className="sample-action">Unlock <Icon name="arrow" size={16} /></span>
-                        </button>
-                      ))
+                      <button className="sample-row sample-row-locked" onClick={openAccess}>
+                        <span className="sample-icon"><Icon name="lock" size={18} /></span>
+                        <span className="sample-copy">
+                          <strong>Client identity and approved articles</strong>
+                          <small>Encrypted portfolio file</small>
+                        </span>
+                        <span className="sample-action">Unlock <Icon name="arrow" size={16} /></span>
+                      </button>
                     )}
                   </div>
                 </article>
@@ -571,9 +586,8 @@ export default function Home() {
 
         <section className="cloud-section section">
           <div className="cloud-orbit" aria-hidden="true">
-            <span className="orbit-ring orbit-ring-one" />
-            <span className="orbit-ring orbit-ring-two" />
             <span className="orbit-core">AWS</span>
+            <span className="cloud-system-label">Architecture · Operations · Developer services</span>
           </div>
           <div className="cloud-copy">
             <p className="eyebrow">Cloud content</p>
@@ -625,6 +639,34 @@ export default function Home() {
                 <div>
                   <h3>{step.title}</h3>
                   <p>{step.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="experience-section section" id="experience">
+          <div className="experience-heading">
+            <div>
+              <p className="eyebrow">Independent experience</p>
+              <h2>Writing ventures built over time.</h2>
+            </div>
+            <p>
+              Public-facing experience beyond confidential client engagements.
+              These entries are included as background rather than portfolio samples.
+            </p>
+          </div>
+          <div className="experience-list">
+            {PUBLIC_EXPERIENCE.map((experience, index) => (
+              <article className="experience-item" key={experience.title}>
+                <span className="experience-index">0{index + 1}</span>
+                <div className="experience-main">
+                  <p>{experience.date}</p>
+                  <h3>{experience.title}</h3>
+                </div>
+                <div className="experience-detail">
+                  <strong>{experience.role}</strong>
+                  <p>{experience.copy}</p>
                 </div>
               </article>
             ))}

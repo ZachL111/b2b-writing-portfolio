@@ -1,0 +1,1 @@
+{"v":1,"id":"9dba7153ea3c4a0c9c166554773f9831","kind":"manifest","alg":"PBKDF2-SHA256/A256GCM","kdf":{"iterations":600000,"salt":"8xh67z93eMLhzqXMFz6zRQ"},"gcm":{"iv":"0EA3GvknfmWvGWsm","tagBits":128},"aad":"zl-b2b-vault:v1:9dba7153ea3c4a0c9c166554773f9831:manifest","ciphertext":"samples/encrypted/objects/9dba7153ea3c4a0c9c166554773f9831.bin"}

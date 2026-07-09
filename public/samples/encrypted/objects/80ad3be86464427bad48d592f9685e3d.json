@@ -1,0 +1,1 @@
+{"v":1,"id":"80ad3be86464427bad48d592f9685e3d","kind":"document","alg":"PBKDF2-SHA256/A256GCM","kdf":{"iterations":600000,"salt":"EZoKoN9LAqn46NWIbAGEfA"},"gcm":{"iv":"nCJdpf1SBGxFeqSB","tagBits":128},"aad":"zl-b2b-vault:v1:80ad3be86464427bad48d592f9685e3d:document","ciphertext":"samples/encrypted/objects/80ad3be86464427bad48d592f9685e3d.bin"}

@@ -1,0 +1,1 @@
+{"v":1,"id":"ababda1886104fdd85a5291352cf5168","kind":"document","alg":"PBKDF2-SHA256/A256GCM","kdf":{"iterations":600000,"salt":"laD6x4pnHuQunUpsDJu75g"},"gcm":{"iv":"AuyeteeaswsegWIJ","tagBits":128},"aad":"zl-b2b-vault:v1:ababda1886104fdd85a5291352cf5168:document","ciphertext":"samples/encrypted/objects/ababda1886104fdd85a5291352cf5168.bin"}
