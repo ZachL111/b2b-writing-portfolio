@@ -28,10 +28,10 @@
     const unlocked = isUnlocked();
     grid.innerHTML = "";
 
-    data.samples.forEach((sample) => {
+    data.samples.forEach((sample, index) => {
       const displaySample = unlocked ? mergePrivateSampleData(sample) : sample;
       const card = document.createElement("article");
-      card.className = "sample-card";
+      card.className = `sample-card${unlocked ? " is-unlocked" : " is-locked"}`;
 
       const state = document.createElement("span");
       state.className = `state-pill${unlocked ? " unlocked" : ""}`;
@@ -42,26 +42,31 @@
         .join("");
 
       card.innerHTML = `
-        <div>
-          <div class="sample-meta">
+        <div class="sample-card-main">
+          <div class="sample-card-top">
+            <span class="sample-index">${String(index + 1).padStart(2, "0")}</span>
             <span class="client-label">${escapeHtml(displaySample.client)}</span>
           </div>
-          <h3>${escapeHtml(displaySample.title)}</h3>
-          <p>${escapeHtml(displaySample.description)}</p>
-          <div class="sample-facts">
-            <span><strong>Format:</strong> ${escapeHtml(displaySample.format)}</span>
-            <span><strong>Audience:</strong> ${escapeHtml(displaySample.audience)}</span>
+          <div class="sample-copy">
+            <h3>${escapeHtml(displaySample.title)}</h3>
+            <p>${escapeHtml(displaySample.description)}</p>
           </div>
-          <ul class="tag-list">${tags}</ul>
+          <div class="sample-facts">
+            <span><strong>Format</strong>${escapeHtml(displaySample.format)}</span>
+            <span><strong>Audience</strong>${escapeHtml(displaySample.audience)}</span>
+          </div>
+          <ul class="tag-list" aria-label="Topics">${tags}</ul>
         </div>
       `;
 
-      card.querySelector(".sample-meta").appendChild(state);
+      card.querySelector(".sample-card-top").appendChild(state);
 
       const button = document.createElement("button");
       button.className = "button";
       button.type = "button";
-      button.textContent = unlocked ? "Open decrypted sample" : "Unlock to view";
+      button.innerHTML = unlocked
+        ? 'Open sample <span aria-hidden="true">+</span>'
+        : 'Unlock first <span aria-hidden="true">+</span>';
       button.disabled = !unlocked;
       button.addEventListener("click", () => viewSample(displaySample, button));
       card.appendChild(button);
@@ -185,7 +190,7 @@
       return;
     }
 
-    const originalText = button.textContent;
+    const originalHtml = button.innerHTML;
     button.disabled = true;
     button.textContent = "Opening...";
 
@@ -213,7 +218,7 @@
       renderSamples();
     } finally {
       button.disabled = !isUnlocked();
-      button.textContent = originalText;
+      button.innerHTML = originalHtml;
     }
   }
 

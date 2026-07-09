@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
@@ -19,199 +19,256 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-rail">
       <a class="brand" href="#top" aria-label="Zach Lewis home">
         <span class="brand-mark">ZL</span>
-        <span>Zach Lewis</span>
+        <span class="brand-copy">
+          <strong>Zach Lewis</strong>
+          <small>B2B technical writer</small>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#samples">Samples</a>
-        <a href="#contact">Contact</a>
+        <a href="#about"><span>01</span>About</a>
+        <a href="#process"><span>02</span>Process</a>
+        <a href="#experience"><span>03</span>Experience</a>
+        <a href="#samples"><span>04</span>Samples</a>
       </nav>
+      <a class="rail-cta" href="#samples">
+        <span>Encrypted review room</span>
+        <strong>Open sample vault</strong>
+      </a>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <p class="eyebrow">Independent B2B technical writing</p>
-          <h1 id="hero-title">Zach Lewis</h1>
-          <p class="hero-title">
-            B2B Technical Writer | SaaS, Cloud, AI, Cybersecurity &amp; Developer Tools
-          </p>
-          <p class="hero-copy">
-            I write clear, credible B2B content for technical and executive audiences across cloud
-            infrastructure, SaaS, AI/ML, cybersecurity, identity, data platforms, and developer tools.
-          </p>
-          <div class="hero-signal" aria-label="Writing strengths">
-            <span><strong>Practitioner detail</strong><small>Enough depth for technical readers.</small></span>
-            <span><strong>Executive clarity</strong><small>Clean stakes, tradeoffs, and value.</small></span>
-            <span><strong>Buyer credibility</strong><small>No filler. No fake urgency.</small></span>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Independent B2B technical writing</p>
+            <h1 id="hero-title">Zach Lewis</h1>
+            <p class="hero-line">
+              I make complicated technical products sound clear, credible, and worth taking seriously.
+            </p>
+            <p class="hero-text">
+              I write for SaaS, cloud, AI/ML, cybersecurity, identity, data platform, and developer tool
+              teams that need content with actual technical weight behind it.
+            </p>
+            <div class="hero-actions" aria-label="Portfolio actions">
+              <a class="button button-primary" href="#samples"><span aria-hidden="true">+</span> Review samples</a>
+              <a class="button button-secondary" href="#experience">See writing lanes</a>
+            </div>
           </div>
-          <div class="hero-actions" aria-label="Portfolio actions">
-            <a class="button button-primary" href="#samples">Review samples</a>
-            <a class="button button-secondary" href="#experience">See experience</a>
-          </div>
+
+          <aside class="review-packet" aria-label="Portfolio review packet">
+            <div class="packet-topline">
+              <span>Review packet</span>
+              <strong>Session locked</strong>
+            </div>
+            <div class="packet-visual" role="img" aria-label="Connected technical documents"></div>
+            <dl class="packet-list">
+              <div>
+                <dt>What I write</dt>
+                <dd>White papers, briefs, technical blogs, executive explainers, editorial copy.</dd>
+              </div>
+              <div>
+                <dt>How it should feel</dt>
+                <dd>Specific enough for practitioners. Clean enough for executives.</dd>
+              </div>
+              <div>
+                <dt>Private samples</dt>
+                <dd>Client names and files stay encrypted until the passphrase unlocks them.</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+        <div class="domain-strip" aria-label="Writing categories">
+          <span>SaaS</span>
+          <span>Cloud</span>
+          <span>AI/ML</span>
+          <span>Cybersecurity</span>
+          <span>Identity</span>
+          <span>Data platforms</span>
+          <span>Developer tools</span>
         </div>
       </section>
 
-      <section class="section intro-band" id="about" aria-labelledby="about-title">
-        <div class="section-grid">
-          <div>
-            <p class="section-kicker">About</p>
-            <h2 id="about-title">I help technical companies say the thing they actually mean.</h2>
-          </div>
-          <div class="prose">
-            <p>
-              I come from a software engineering background, so I do not need the simplified version of
-              the product before I can write about it. I like the messy middle: architecture, security
-              tradeoffs, buyer urgency, implementation detail, and the part where everyone knows what the
-              product does but nobody has said it cleanly yet.
-            </p>
-            <p>
-              I turn complex technical ideas into content that works for practitioners and executives:
-              white papers, thought leadership, solution briefs, case studies, technical blogs, editorial
-              content, web copy, and executive explainers that do not read like committee paste.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section focus-section" aria-labelledby="focus-title">
-        <div class="section-heading compact-heading">
-          <p class="section-kicker">How I work</p>
-          <h2 id="focus-title">I turn product knowledge into writing a buyer can trust.</h2>
-        </div>
-        <div class="metric-row">
-          <div class="metric">
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-layout">
+          <div class="section-index">
             <span>01</span>
-            <strong>Find the real claim</strong>
-            <p>I look for the technical truth that makes the product useful, not the generic category language every competitor could say.</p>
+            <strong>About</strong>
           </div>
-          <div class="metric">
+          <div class="section-main">
+            <p class="section-kicker">Where I fit</p>
+            <h2 id="about-title">I am useful when the product is too technical for generic marketing copy.</h2>
+            <div class="copy-columns">
+              <p>
+                I come from a software engineering background, so I am comfortable sitting with architecture,
+                infrastructure, security tradeoffs, workflow details, and the product logic behind the pitch.
+              </p>
+              <p>
+                My job is to turn that messy product knowledge into writing a smart buyer can trust: clear
+                enough to move quickly, specific enough to survive technical scrutiny, and human enough that it
+                does not sound like it was assembled in a content factory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="process" aria-labelledby="process-title">
+        <div class="section-layout">
+          <div class="section-index">
             <span>02</span>
-            <strong>Translate the stakes</strong>
-            <p>I connect architecture, risk, automation, and workflow details to business outcomes without flattening the technical argument.</p>
+            <strong>Process</strong>
           </div>
-          <div class="metric">
+          <div class="section-main">
+            <p class="section-kicker">How I work</p>
+            <h2 id="process-title">I write from the argument outward.</h2>
+            <div class="process-stack">
+              <article>
+                <span>01</span>
+                <h3>Find the real claim</h3>
+                <p>I look for the thing your product can say that a competitor cannot say without lying.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Keep the technical spine</h3>
+                <p>I do not sand the details down until the piece becomes a vague promise with nicer spacing.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Make the buyer care</h3>
+                <p>I connect the technical mechanism to risk, cost, speed, trust, and the decision someone has to make.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-layout">
+          <div class="section-index">
             <span>03</span>
-            <strong>Write for skepticism</strong>
-            <p>I assume the reader is smart, busy, and allergic to fluff. The writing has to earn trust quickly.</p>
+            <strong>Experience</strong>
+          </div>
+          <div class="section-main">
+            <p class="section-kicker">Writing lanes</p>
+            <h2 id="experience-title">I have written for teams working in categories where vague copy gets punished.</h2>
+            <p class="section-subcopy">
+              The public page shows the category and writing context. The five private client names stay locked
+              with the encrypted samples until the passphrase is entered.
+            </p>
+            <div class="experience-ledger" aria-label="Client and company experience">
+              <article
+                class="experience-item locked-client"
+                data-client-key="data-platform-automation"
+                data-public-name="Locked client: Data observability"
+                data-public-detail="AI/data observability, database automation, data cost optimization, DataOps/FinOps"
+                data-public-status="Name locked"
+              >
+                <div>
+                  <span class="experience-type">Private client</span>
+                  <h3 data-client-name>Locked client: Data observability</h3>
+                  <p data-client-detail>AI/data observability, database automation, data cost optimization, DataOps/FinOps</p>
+                </div>
+                <span class="client-status" data-client-status>Name locked</span>
+              </article>
+              <article
+                class="experience-item locked-client"
+                data-client-key="cloud-access-governance"
+                data-public-name="Locked client: Cloud access governance"
+                data-public-detail="Cloud access governance, identity security, least privilege, cloud-native security"
+                data-public-status="Name locked"
+              >
+                <div>
+                  <span class="experience-type">Private client</span>
+                  <h3 data-client-name>Locked client: Cloud access governance</h3>
+                  <p data-client-detail>Cloud access governance, identity security, least privilege, cloud-native security</p>
+                </div>
+                <span class="client-status" data-client-status>Name locked</span>
+              </article>
+              <article
+                class="experience-item locked-client"
+                data-client-key="non-human-identity-security"
+                data-public-name="Locked client: Non-human identity"
+                data-public-detail="Non-human identity security, AI agents, machine identities, access risk"
+                data-public-status="Name locked"
+              >
+                <div>
+                  <span class="experience-type">Private client</span>
+                  <h3 data-client-name>Locked client: Non-human identity</h3>
+                  <p data-client-detail>Non-human identity security, AI agents, machine identities, access risk</p>
+                </div>
+                <span class="client-status" data-client-status>Name locked</span>
+              </article>
+              <article
+                class="experience-item locked-client"
+                data-client-key="secrets-machine-identity"
+                data-public-name="Locked client: Secrets and machine identity"
+                data-public-detail="Secrets management, machine identity, privileged access, cloud security"
+                data-public-status="Name locked"
+              >
+                <div>
+                  <span class="experience-type">Private client</span>
+                  <h3 data-client-name>Locked client: Secrets and machine identity</h3>
+                  <p data-client-detail>Secrets management, machine identity, privileged access, cloud security</p>
+                </div>
+                <span class="client-status" data-client-status>Name locked</span>
+              </article>
+              <article
+                class="experience-item locked-client"
+                data-client-key="ai-code-review-ci-validation"
+                data-public-name="Locked client: AI developer tools"
+                data-public-detail="AI code review, CI validation, developer productivity, engineering workflows"
+                data-public-status="Name locked"
+              >
+                <div>
+                  <span class="experience-type">Private client</span>
+                  <h3 data-client-name>Locked client: AI developer tools</h3>
+                  <p data-client-detail>AI code review, CI validation, developer productivity, engineering workflows</p>
+                </div>
+                <span class="client-status" data-client-status>Name locked</span>
+              </article>
+              <article class="experience-item">
+                <div>
+                  <span class="experience-type">Public brand</span>
+                  <h3>ZachThinksMedia</h3>
+                  <p>Creator and editorial writing</p>
+                </div>
+                <span>May 2020-Present</span>
+              </article>
+              <article class="experience-item">
+                <div>
+                  <span class="experience-type">Public brand</span>
+                  <h3>ZachTalks</h3>
+                  <p>Writing and content brand</p>
+                </div>
+                <span>2023-2026</span>
+              </article>
+              <article class="experience-item">
+                <div>
+                  <span class="experience-type">Company</span>
+                  <h3>My Opinions Are LLC</h3>
+                  <p>Writing and content company</p>
+                </div>
+                <span>2017-2022</span>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading">
-          <p class="section-kicker">Client and writing experience</p>
-          <h2 id="experience-title">I have written directly for teams working in hard technical categories.</h2>
-          <p class="section-subcopy">
-            Named client context stays behind the same passphrase as the samples. The public version shows
-            the category, problem space, and kind of writing work without exposing private client details.
-          </p>
-        </div>
-        <div class="experience-list" aria-label="Client and company experience">
-          <article
-            class="experience-item locked-client"
-            data-client-key="data-platform-automation"
-            data-public-name="Locked client: Data observability"
-            data-public-detail="AI/data observability, database automation, data cost optimization, DataOps/FinOps"
-            data-public-status="Name locked"
-          >
-            <div>
-              <h3 data-client-name>Locked client: Data observability</h3>
-              <p data-client-detail>AI/data observability, database automation, data cost optimization, DataOps/FinOps</p>
-            </div>
-            <span class="client-status" data-client-status>Name locked</span>
-          </article>
-          <article
-            class="experience-item locked-client"
-            data-client-key="cloud-access-governance"
-            data-public-name="Locked client: Cloud access governance"
-            data-public-detail="Cloud access governance, identity security, least privilege, cloud-native security"
-            data-public-status="Name locked"
-          >
-            <div>
-              <h3 data-client-name>Locked client: Cloud access governance</h3>
-              <p data-client-detail>Cloud access governance, identity security, least privilege, cloud-native security</p>
-            </div>
-            <span class="client-status" data-client-status>Name locked</span>
-          </article>
-          <article
-            class="experience-item locked-client"
-            data-client-key="non-human-identity-security"
-            data-public-name="Locked client: Non-human identity"
-            data-public-detail="Non-human identity security, AI agents, machine identities, access risk"
-            data-public-status="Name locked"
-          >
-            <div>
-              <h3 data-client-name>Locked client: Non-human identity</h3>
-              <p data-client-detail>Non-human identity security, AI agents, machine identities, access risk</p>
-            </div>
-            <span class="client-status" data-client-status>Name locked</span>
-          </article>
-          <article
-            class="experience-item locked-client"
-            data-client-key="secrets-machine-identity"
-            data-public-name="Locked client: Secrets and machine identity"
-            data-public-detail="Secrets management, machine identity, privileged access, cloud security"
-            data-public-status="Name locked"
-          >
-            <div>
-              <h3 data-client-name>Locked client: Secrets and machine identity</h3>
-              <p data-client-detail>Secrets management, machine identity, privileged access, cloud security</p>
-            </div>
-            <span class="client-status" data-client-status>Name locked</span>
-          </article>
-          <article
-            class="experience-item locked-client"
-            data-client-key="ai-code-review-ci-validation"
-            data-public-name="Locked client: AI developer tools"
-            data-public-detail="AI code review, CI validation, developer productivity, engineering workflows"
-            data-public-status="Name locked"
-          >
-            <div>
-              <h3 data-client-name>Locked client: AI developer tools</h3>
-              <p data-client-detail>AI code review, CI validation, developer productivity, engineering workflows</p>
-            </div>
-            <span class="client-status" data-client-status>Name locked</span>
-          </article>
-          <article class="experience-item">
-            <div>
-              <h3>ZachThinksMedia</h3>
-              <p>Creator and editorial writing</p>
-            </div>
-            <span>May 2020-Present</span>
-          </article>
-          <article class="experience-item">
-            <div>
-              <h3>ZachTalks</h3>
-              <p>Writing and content brand</p>
-            </div>
-            <span>2023-2026</span>
-          </article>
-          <article class="experience-item">
-            <div>
-              <h3>My Opinions Are LLC</h3>
-              <p>Writing and content company</p>
-            </div>
-            <span>2017-2022</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section samples-section" id="samples" aria-labelledby="samples-title">
-        <div class="samples-layout">
+      <section class="samples-section" id="samples" aria-labelledby="samples-title">
+        <div class="samples-shell">
           <div class="samples-copy">
-            <p class="section-kicker">Portfolio samples</p>
-            <h2 id="samples-title">Selected samples, encrypted before they ever reach the browser.</h2>
+            <p class="section-kicker">Encrypted sample vault</p>
+            <h2 id="samples-title">The public page shows the map. The passphrase opens the work.</h2>
             <p>
               Samples are shared for recruiting review only. Please do not distribute.
             </p>
             <p>
-              The cards below show the kind of work I do and who it is usually for. Client names and files
-              reveal only after unlock, and the unlocked state stays in this session.
+              The files and private client names are encrypted before deployment. Unlocking only lasts for this
+              browser session.
             </p>
             <form class="unlock-panel" id="unlock-form">
               <label for="passphrase">Portfolio passphrase</label>
@@ -223,24 +280,26 @@
                   autocomplete="current-password"
                   placeholder="Enter passphrase"
                 >
-                <button class="button button-primary" type="submit">Unlock</button>
+                <button class="button button-primary" type="submit"><span aria-hidden="true">+</span> Unlock</button>
               </div>
-              <button class="lock-link" id="lock-button" type="button">Lock portfolio</button>
-              <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+              <div class="unlock-footer">
+                <button class="lock-link" id="lock-button" type="button">Lock portfolio</button>
+                <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+              </div>
             </form>
           </div>
           <div class="sample-grid" id="sample-grid" aria-live="polite"></div>
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div>
           <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">If the product is technical and the audience is skeptical, that is where I am useful.</h2>
+          <h2 id="contact-title">Give me the complicated thing. I will make it readable without making it smaller.</h2>
         </div>
         <div class="contact-actions">
           <a class="button button-primary" href="https://github.com/ZachL111" rel="noreferrer">GitHub profile</a>
-          <a class="button button-secondary" href="#samples">Open samples</a>
+          <a class="button button-secondary" href="#samples">Open sample vault</a>
         </div>
       </section>
     </main>
