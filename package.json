@@ -1,0 +1,11 @@
+{
+  "name": "b2b-writing-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Encrypted static B2B technical writing portfolio for GitHub Pages.",
+  "scripts": {
+    "encrypt": "node encrypt-samples.js",
+    "check": "node --check encrypt-samples.js && node --check app.js"
+  },
+  "license": "UNLICENSED"
+}
