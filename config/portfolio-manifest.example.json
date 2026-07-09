@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "clients": [
+    {
+      "publicId": "client-01",
+      "realName": "Replace with private client name",
+      "documents": [
+        {
+          "id": "client-01-sample-01",
+          "title": "Replace with private document title",
+          "formatLabel": "Technical article",
+          "file": "client-01/sample.pdf"
+        }
+      ]
+    },
+    {
+      "publicId": "client-02",
+      "realName": "Replace with private client name",
+      "documents": []
+    },
+    {
+      "publicId": "client-03",
+      "realName": "Replace with private client name",
+      "documents": []
+    },
+    {
+      "publicId": "client-04",
+      "realName": "Replace with private client name",
+      "documents": []
+    },
+    {
+      "publicId": "client-05",
+      "realName": "Replace with private client name",
+      "documents": []
+    }
+  ]
+}

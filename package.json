@@ -1,11 +1,29 @@
 {
   "name": "b2b-writing-portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Encrypted static B2B technical writing portfolio for GitHub Pages.",
-  "scripts": {
-    "encrypt": "node encrypt-samples.js",
-    "check": "node --check encrypt-samples.js && node --check app.js"
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
   },
-  "license": "UNLICENSED"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/copy-legacy-encrypted.mjs",
+    "build:github": "next build && node scripts/copy-legacy-encrypted.mjs",
+    "portfolio:encrypt": "node scripts/encrypt-portfolio.mjs build",
+    "portfolio:audit": "node scripts/encrypt-portfolio.mjs audit"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3"
+  }
 }
