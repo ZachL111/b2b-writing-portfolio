@@ -10,15 +10,6 @@
   let privateMetadata = null;
   let blobUrls = [];
 
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
-    },
-    { passive: true }
-  );
-
   function setStatus(message, type) {
     statusMessage.textContent = message;
     statusMessage.dataset.type = type || "";
